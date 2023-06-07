@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
 
-  userName: {
+  username: {
     type: String,
     required: true,
     unique: true,
@@ -40,7 +40,7 @@ userSchema.statics.signup = async function (
   ipAddress
 ) {
   // validation
-  if (!name || !username || !password || !ipAddress) {
+  if (!name || !username || !email || !password || !ipAddress) {
     throw Error("All fields must be filled");
   }
 
