@@ -5,8 +5,8 @@ const {
 
   // getUsers,
   getUser,
-  // updateUser,
-  // deleteUser,
+  updateUser,
+  deleteUser,
 } = require("../controllers/user");
 const authMiddleware = require("../middlewares/auth.middleware");
 
@@ -25,10 +25,10 @@ router.post("/signup", sinupUser);
 // get an user
 router.get("/:userId", authMiddleware, getUser);
 
-// // update an user
-// router.patch("/:userId", authMiddleware, updateUser);
+// update an user
+router.patch("/:userId", authMiddleware, updateUser);
 
-// // update an user
-// router.delete("/:userId", authMiddleware, deleteUser);
+// delete an user
+router.delete("/:userId", authMiddleware, deleteUser);
 
 module.exports = router;
