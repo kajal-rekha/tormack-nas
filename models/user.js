@@ -72,7 +72,7 @@ userSchema.statics.signup = async function (
     password: hashPass,
     ipAddress,
   });
-
+  console.log(user);
   return user;
 };
 
