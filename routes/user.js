@@ -2,13 +2,13 @@ const express = require("express");
 const {
   sinupUser,
   loginUser,
-
-  // getUsers,
+  getUsers,
   getUser,
   updateUser,
   deleteUser,
 } = require("../controllers/user");
 const authMiddleware = require("../middlewares/auth.middleware");
+const isAdmin = require("../middlewares/admin.middleware");
 
 //router
 const router = express.Router();
@@ -19,8 +19,8 @@ router.post("/login", loginUser);
 // signup route
 router.post("/signup", sinupUser);
 
-// // get all  users
-// router.get("/all", authMiddleware, getUsers);
+// get all  users
+router.get("/all", authMiddleware, isAdmin, getUsers);
 
 // get an user
 router.get("/:userId", authMiddleware, getUser);
