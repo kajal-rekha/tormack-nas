@@ -9,6 +9,11 @@ const deviceSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+
+  user_agent: {
+    type: String,
+    required: true,
+  },
   os: {
     type: String,
     required: true,

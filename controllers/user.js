@@ -67,8 +67,9 @@ const getUsers = async (req, res) => {
     const users = await User.find({});
 
     if (!users) {
-      throw Error("User not found");
+      throw Error("Users not found");
     }
+    res.status(200).json(users);
   } catch (err) {
     res.status(404).json({ error: err.message });
   }
